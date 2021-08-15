@@ -1,6 +1,6 @@
 Java Agent 101
 
->gradle-version: 7.0.2 
+>gradle-version: 7.0.2  
 java-version: 16
 
 ```bash
