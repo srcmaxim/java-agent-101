@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'com.github.srcmaxim'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('org.javassist:javassist:3.28.0-GA')
+}
+
+jar {
+    manifest {
+        attributes(
+                "Main-Class": "com.github.srcmaxim.AddApp",
+                "Premain-Class": "com.github.srcmaxim.HelloAgent",
+                "Agent-Class": "com.github.srcmaxim.HelloAgent",
+                "Boot-Class-Path": "javassist.jar",
+                "Can-Redefine-Classes": "true",
+                "Can-Retransform-Classes": "true")
+    }
+}
