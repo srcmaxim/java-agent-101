@@ -1,5 +1,6 @@
 package com.github.srcmaxim;
 
+import java.lang.instrument.ClassFileTransformer;
 import java.lang.instrument.Instrumentation;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -45,8 +46,10 @@ public class HelloAgent {
   }
 
   private static void transform(Class<?> clazz, ClassLoader classLoader, Instrumentation instrumentation) {
-    CalculationTransformer dt = new CalculationTransformer(clazz.getName(), classLoader);
-    instrumentation.addTransformer(dt, true);
+    ClassFileTransformer dt1 = new JavaAssistTransformer(clazz.getName(), classLoader);
+    instrumentation.addTransformer(dt1, true);
+    ClassFileTransformer dt2 = ByteBuddyTransformer.createClassFileTransformer(clazz.getName());
+    instrumentation.addTransformer(dt2, true);
     try {
       instrumentation.retransformClasses(clazz);
     } catch (Exception ex) {

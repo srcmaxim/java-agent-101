@@ -10,15 +10,15 @@ import javassist.ClassPool;
 import javassist.CtClass;
 import javassist.NotFoundException;
 
-public class CalculationTransformer implements ClassFileTransformer {
+public class JavaAssistTransformer implements ClassFileTransformer {
 
-  private static final Logger LOGGER = Logger.getLogger(CalculationTransformer.class.getName());
+  private static final Logger LOGGER = Logger.getLogger(JavaAssistTransformer.class.getName());
   private static final String ADD_METHOD = "add";
 
   private final String targetClassName;
   private final ClassLoader targetClassLoader;
 
-  public CalculationTransformer(String targetClassName, ClassLoader targetClassLoader) {
+  public JavaAssistTransformer(String targetClassName, ClassLoader targetClassLoader) {
     this.targetClassName = targetClassName;
     this.targetClassLoader = targetClassLoader;
   }

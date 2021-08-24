@@ -3,7 +3,7 @@
 >gradle-version: 7.0.2  
 java-version: 16
 
-This code provides simple Java Agent available via [`java.lang.instrument`](https://docs.oracle.com/en/java/javase/16/docs/api/java.instrument/java/lang/instrument/package-summary.html) API and [Javassist](https://www.javassist.org) bytecode manipulation liblary
+This code provides simple Java Agent available via [`java.lang.instrument`](https://docs.oracle.com/en/java/javase/16/docs/api/java.instrument/java/lang/instrument/package-summary.html) API with [Javassist](https://www.javassist.org) and [ByteBuddy](https://bytebuddy.net) bytecode manipulation libraries
 
 How to run example:
 
